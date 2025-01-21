@@ -1,0 +1,36 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "757486ef2968723ffc4fa04cc3b62455"
+application_url = "https://back-operators-heights-unique.trycloudflare.com"
+embedded = true
+name = "qf-network-trial-app"
+handle = "qf-network-trial-app-1"
+
+[webhooks]
+api_version = "2025-01"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://back-operators-heights-unique.trycloudflare.com/auth/callback",
+  "https://back-operators-heights-unique.trycloudflare.com/auth/shopify/callback",
+  "https://back-operators-heights-unique.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "gtech0.myshopify.com"
+automatically_update_urls_on_dev = true
