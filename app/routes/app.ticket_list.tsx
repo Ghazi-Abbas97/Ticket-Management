@@ -1,6 +1,8 @@
 import GenerateTickets from "app/components/generate_ticket";
 import GenerateTicketsTable from "app/components/ticket_table";
 import { useState } from "react";
+import * as Yup from "yup";
+import { useFormik } from "formik";
 
 function GenerateTicketsView() {
   const [isShowTicketForm, setIsShowTicketForm] = useState(false);
@@ -12,6 +14,27 @@ function GenerateTicketsView() {
   const prevScreen = () => {
     setIsShowTicketForm(false);
   };
+
+  const initialValues = {
+    title: "",
+    description: "",
+  };
+
+  const validationSchema = Yup.object({
+    title: Yup.string().required("Title is required"),
+    description: Yup.string().required("Description is required"),
+  });
+
+  const formik = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit: (values) => {
+      console.log(values);
+      setIsShowTicketForm(false); // Corrected to directly call the passed function
+      formik.resetForm();
+    },
+  });
+
   return (
     <>
       {/* Grid Layout */}
@@ -93,7 +116,7 @@ function GenerateTicketsView() {
       ></div>
       {/* <GenerateTickets /> */}
       {isShowTicketForm ? (
-        <GenerateTickets setIsShowTicketForm={setIsShowTicketForm} />
+        <GenerateTickets formik={formik} />
       ) : (
         <GenerateTicketsTable />
       )}

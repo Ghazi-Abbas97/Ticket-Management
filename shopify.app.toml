@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "757486ef2968723ffc4fa04cc3b62455"
-application_url = "https://chronic-pct-presented-dentists.trycloudflare.com"
+application_url = "https://edited-brake-lenders-surfing.trycloudflare.com"
 embedded = true
 name = "qf-network-trial-app"
 handle = "qf-network-trial-app-1"
@@ -23,9 +23,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://chronic-pct-presented-dentists.trycloudflare.com/auth/callback",
-  "https://chronic-pct-presented-dentists.trycloudflare.com/auth/shopify/callback",
-  "https://chronic-pct-presented-dentists.trycloudflare.com/api/auth/callback"
+  "https://edited-brake-lenders-surfing.trycloudflare.com/auth/callback",
+  "https://edited-brake-lenders-surfing.trycloudflare.com/auth/shopify/callback",
+  "https://edited-brake-lenders-surfing.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

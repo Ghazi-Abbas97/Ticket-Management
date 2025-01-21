@@ -5,33 +5,9 @@ import {
   Button,
   LegacyCard,
 } from "@shopify/polaris";
-import * as Yup from "yup";
-import { useFormik } from "formik";
 
-function GenerateTickets({
-  setIsShowTicketForm,
-}: {
-  setIsShowTicketForm: any;
-}) {
-  const initialValues = {
-    title: "",
-    description: "",
-  };
-
-  const validationSchema = Yup.object({
-    title: Yup.string().required("Title is required"),
-    description: Yup.string().required("Description is required"),
-  });
-
-  const formik = useFormik({
-    initialValues,
-    validationSchema,
-    onSubmit: (values) => {
-      console.log(values);
-      setIsShowTicketForm(false); // Corrected to directly call the passed function
-    },
-  });
-
+function GenerateTickets({ formik }: any) {
+  
   return (
     <div style={{ padding: "30px" }}>
       <LegacyCard>
